@@ -4,7 +4,7 @@ async function findUser(req, res, next) {
   try {
     const existingUser = await userModel.find({ email: req.body.email });
 
-    if (existingUser.length) res.existingUser = existingUser;
+    if (existingUser.length) res.existingUser = existingUser[0].email;
   } catch (error) {
     console.log(error.message);
   }

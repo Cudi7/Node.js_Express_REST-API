@@ -1,7 +1,11 @@
-[✅] server.js setup
-[✅] db.js and mongodb setup
-[❌] basic routing
-[❌] view templates for register new user, login, logout, update (patch) and delete
-[❌] view templates for register new user, login, logout, update (patch) and delete
-[❌] routes for register new user, login, logout, update and delete
-[❌] controllers
+BASIC REST API WITH NODE and EXPRESS
+
+ADMIN can get a list of all USERS
+ADMIN can get a list of a single USER
+
+User can register to mongodb with bcrypt, checking first if there is already a user registered with that e-mail ✅
+User can login, checking first if email exist and if password matches (with bcrypt) ✅
+
+User can logout
+User can update
+User can exit and login sessions stores at localStorage

@@ -5,6 +5,7 @@ import ejs from 'ejs';
 import connectDB from './config/db.js';
 import indexRoute from './routes/indexRoute.js';
 import registerRoute from './routes/registerRoute.js';
+import logoutRoute from './routes/logoutRoute.js';
 
 dotenv.config({ path: './config/.env' });
 const app = express();
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', indexRoute);
 app.use('/register', registerRoute);
+app.use('/logout', logoutRoute);
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}`);
