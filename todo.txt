@@ -1,5 +1,5 @@
 [✅] server.js setup
-[❌] db.js setup
+[✅] db.js and mongodb setup
 [❌] view templates for register new user, login, logout, update (patch) and delete
 [❌] routes for register new user, login, logout, update and delete
 [❌] controllers
