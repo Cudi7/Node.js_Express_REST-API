@@ -1,4 +1,4 @@
-# React Redux TodoApp
+# NodeJS, Express, MongoDB REST API
 
 > REST API with Node, Express, EJS and MongoDB (GET, POST, PATCH, DELETE)
 
