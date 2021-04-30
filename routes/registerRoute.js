@@ -10,7 +10,8 @@ route.get('/', (req, res) => {
 });
 
 route.post('/newuser', findUser, registerController, (req, res) => {
-  res.send(res.message);
+  global.userInfo = undefined;
+  res.render('error.ejs', { message: res.message });
 });
 
 export default route;

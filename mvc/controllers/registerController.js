@@ -6,7 +6,7 @@ async function registerController(req, res, next) {
 
   console.log(res.existingUser);
 
-  message = res.existingUser && `Email: ${res.existingUser} in use`;
+  message = res.existingUser && `${res.existingUser.email} already in use`;
 
   if (!res.existingUser) {
     const { name, email, password } = req.body;
@@ -21,12 +21,14 @@ async function registerController(req, res, next) {
       });
 
       message = `Hello ${newUser.name} your account has been created!`;
+      global.userInfo = req.body;
     } catch (error) {
       console.error(error.message);
     }
   }
 
   res.message = message;
+
   next();
 }
 

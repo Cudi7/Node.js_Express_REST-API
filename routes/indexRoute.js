@@ -5,11 +5,19 @@ import loginController from '../mvc/controllers/loginController.js';
 const route = express.Router();
 
 route.get('/', (req, res) => {
-  res.render('index.ejs');
+  userInfo ? res.redirect('/dashboard') : res.render('index.ejs');
 });
 
-route.post('/login', findUser, loginController, (req, res) => {
-  res.send(res.message);
+route.get('/dashboard', (req, res) => {
+  userInfo ? res.render('dashboard.ejs') : res.redirect('/');
+});
+
+route.post('/dashboard', findUser, loginController, (req, res) => {
+  if (res.login) {
+    res.render('dashboard.ejs');
+  } else {
+    res.render('error.ejs', { message: res.message });
+  }
 });
 
 export default route;

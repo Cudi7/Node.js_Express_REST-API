@@ -2,7 +2,7 @@ import userModel from '../models/userModel.js';
 import bcrypt from 'bcrypt';
 
 async function loginController(req, res, next) {
-  const userInfo = res.existingUser ? res.existingUser : false;
+  const userInfo = res.existingUser?.email ? res.existingUser.email : false;
 
   const passwordValidation =
     userInfo && (await validatePassword(userInfo, req.body.password));
@@ -17,7 +17,15 @@ async function loginController(req, res, next) {
       : `Incorrect Password`;
   }
 
-  res.message = message;
+  if (passwordValidation) {
+    res.login = true;
+    res.userInfo = res.existingUser;
+    global.userInfo = res.existingUser;
+  } else {
+    res.login = false;
+    res.message = message;
+  }
+
   next();
 }
 

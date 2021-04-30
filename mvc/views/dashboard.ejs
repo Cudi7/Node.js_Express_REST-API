@@ -11,33 +11,17 @@
       crossorigin="anonymous"
     />
 
-    <title>Home</title>
+    <title>Dashboard</title>
   </head>
   <body>
     <%- include('./partials/nav.ejs') %>
 
     <div class="mx-5">
-      <form action="/register/newuser" method="post">
-        <label for="fname">First name:</label><br />
-        <input type="text" id="fname" name="name" placeholder="John" /><br />
+      <h3>Welcome Back!</h3>
 
-        <label for="lname">Email:</label><br />
-        <input
-          type="email"
-          id="lname"
-          name="email"
-          placeholder="Doe"
-        /><br /><br />
-
-        <label for="pass">Password:</label><br />
-        <input
-          type="password"
-          id="pass"
-          name="password"
-          placeholder="****"
-        /><br /><br />
-        <input type="submit" value="Submit" />
-      </form>
+      <div>You can now Logout or Update your profile!</div>
+      <button><a class="nav-link" href="/logout">Logout</a></button>
+      <button><a class="nav-link" href="/profile">Update Profile</a></button>
     </div>
 
     <script

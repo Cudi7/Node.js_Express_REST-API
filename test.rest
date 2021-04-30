@@ -1,8 +1,13 @@
-POST http://localhost:5000/register/newuser
-Content-Type: application/json
 
-{
-    "name": "Cudi",
-    "email": "cudi@test.com",
-    "password": "123456"
-}
+
+###
+//GET ALL USERS
+GET http://localhost:5000/users/
+
+
+###
+//GET SINGLE USER
+GET http://localhost:5000/users/607dcb46385da83098df18f3
+
+
+
